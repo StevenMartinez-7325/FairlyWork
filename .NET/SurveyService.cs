@@ -1,11 +1,11 @@
 ﻿using Newtonsoft.Json;
-using Sabio.Data;
-using Sabio.Data.Providers;
-using Sabio.Models;
-using Sabio.Models.Domain;
-using Sabio.Models.Domain.Surveys;
-using Sabio.Models.Requests.Surveys;
-using Sabio.Services.Interfaces.Survey;
+using Data;
+using Data.Providers;
+using Models;
+using Models.Domain;
+using Models.Domain.Surveys;
+using Models.Requests.Surveys;
+using Services.Interfaces.Survey;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -14,7 +14,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sabio.Services.Surveys
+namespace Services.Surveys
 {
     public class SurveyService : ISurveyService
     {
