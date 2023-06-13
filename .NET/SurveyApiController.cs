@@ -2,16 +2,16 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Sabio.Models;
-using Sabio.Models.Domain.Surveys;
-using Sabio.Models.Requests.Surveys;
-using Sabio.Services;
-using Sabio.Services.Interfaces.Survey;
-using Sabio.Web.Controllers;
-using Sabio.Web.Models.Responses;
+using Models;
+using Models.Domain.Surveys;
+using Models.Requests.Surveys;
+using Services;
+using Services.Interfaces.Survey;
+using Web.Controllers;
+using Web.Models.Responses;
 using System;
 
-namespace Sabio.Web.Api.Controllers
+namespace Web.Api.Controllers
 {
     [Route("api/surveys")]
     [ApiController]
