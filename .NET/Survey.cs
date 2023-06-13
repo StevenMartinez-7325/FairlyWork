@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sabio.Models.Domain.Surveys
+namespace Models.Domain.Surveys
 {
     public class Survey : BaseSurvey
     {
