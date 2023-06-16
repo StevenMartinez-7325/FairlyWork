@@ -2,13 +2,9 @@ import React from "react";
 import { Form, OverlayTrigger, Popover } from "react-bootstrap";
 import * as Icon from "react-feather";
 import PropTypes from "prop-types";
-import debug from "sabio-debug";
 import { useFormikContext } from "formik";
 
-const _logger = debug.extend("CheckBox");
-
 function CheckBox({ question }) {
-  _logger(question);
   const { handleChange } = useFormikContext();
 
   const helpMessage = (
