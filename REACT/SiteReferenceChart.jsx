@@ -6,9 +6,6 @@ import Chart from "react-apexcharts";
 import analyticsDatePickSchema from "../../schemas/analyticsDatePickSchema";
 import usePalette from "../../hooks/usePalette";
 import siteRefServices from "../../services/siteReferenceService";
-import debug from "sabio-debug";
-
-const _logger = debug.extend("SiteReferenceChart");
 
 function SiteReferenceChart() {
   const palette = usePalette();
@@ -97,7 +94,6 @@ function SiteReferenceChart() {
   };
 
   const onGetChartInfoSuccess = (response) => {
-    _logger(response);
     let data = response.item;
     setLineData((prevState) => {
       const newSt = { ...prevState };
@@ -108,11 +104,11 @@ function SiteReferenceChart() {
   };
   
   const onGetChartInfoError = (err) => {
-    _logger(err);
+    console.log(err);
   };
 
   const onGetDataByDatesSuccess = (response) => {
-    _logger(response)
+    console.log(response)
     const data = response.item
    
     setLineData((prevState) => {
@@ -125,7 +121,7 @@ function SiteReferenceChart() {
   };
 
   const onGetDataByDatesError = (err) => {
-    _logger(err);
+    console.log(err);
     setLineData((prevState) => {
     const newSt = { ...prevState };
       newSt.data[0].data = [];
