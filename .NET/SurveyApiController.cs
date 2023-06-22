@@ -1,5 +1,3 @@
-namespace Web.Api.Controllers
-{
     [Route("api/surveys")]
     [ApiController]
     public class SurveyApiController : BaseApiController
@@ -176,4 +174,3 @@ namespace Web.Api.Controllers
             return StatusCode(code, response);
         }
     }
-}
