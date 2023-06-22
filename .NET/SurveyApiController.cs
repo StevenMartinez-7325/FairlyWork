@@ -1,16 +1,3 @@
-﻿using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using Models;
-using Models.Domain.Surveys;
-using Models.Requests.Surveys;
-using Services;
-using Services.Interfaces.Survey;
-using Web.Controllers;
-using Web.Models.Responses;
-using System;
-
 namespace Web.Api.Controllers
 {
     [Route("api/surveys")]
