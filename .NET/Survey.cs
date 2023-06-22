@@ -1,4 +1,3 @@
-{
     public class Survey : BaseSurvey
     {
         public string Description { get; set; }
@@ -13,4 +12,3 @@
 
         public DateTime DateModified { get; set; } 
     }
-}
