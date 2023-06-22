@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import debug from "sabio-debug";
 import { Row } from "react-bootstrap";
 import { Helmet } from "react-helmet-async";
 import surveyService from "../../services/surveyService";
@@ -7,7 +6,6 @@ import SurveyCard from "./SurveyCard";
 import Swal from "sweetalert2";
 import { Notyf } from "notyf";
 
-const _logger = debug.extend("Survey");
 function Surveys() {
   const notyf = new Notyf();
   const [survey, setSurvey] = useState({ mySurveys: [], mySurveysComp: [] });
@@ -38,7 +36,7 @@ function Surveys() {
   };
 
   const onDeleteSurveySuccess = (response) => {
-    _logger(response);
+    console.log(response);
       Swal.fire(
         'Deleted!',
         'Your file has been deleted.',
@@ -52,7 +50,7 @@ function Surveys() {
   };
 
   const onDeleteSurveyError = (err) => {
-    _logger(err);
+    console.log(err);
     notyf.error(err)
   };
   
@@ -100,7 +98,7 @@ function Surveys() {
   };
 
   const onUpdateSuccess = (response) => {
-    _logger(response)
+    console.log(response)
     surveyService
     .getSurveys(0, 10)
     .then(onGetSurveysSuccess)
@@ -108,7 +106,7 @@ function Surveys() {
   }
   
   const onGetSurveysSuccess = (response) => {
-    _logger(response);
+    console.log(response);
     let mySurvey = response.item.pagedItems;
     setSurvey((prevState) => {
       const newSt = { ...prevState };
@@ -118,7 +116,7 @@ function Surveys() {
     });
   };
   const onGetSurveysError = (err) => {
-    _logger(err);
+    console.log(err);
   };
 
   const mapSurveys = (survey) => {
