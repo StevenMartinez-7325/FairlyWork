@@ -1,5 +1,3 @@
-namespace Services.Surveys
-{
     public class SurveyService : ISurveyService
     {
        private static IDataProvider _data = null;
@@ -173,4 +171,3 @@ namespace Services.Surveys
             return survey;
         }
     }
-}
