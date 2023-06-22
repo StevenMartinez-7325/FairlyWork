@@ -3,14 +3,9 @@ import { Form, OverlayTrigger, Popover } from "react-bootstrap";
 import { useFormikContext } from "formik";
 import * as Icon from "react-feather";
 import PropTypes from "prop-types";
-import debug from "sabio-debug";
 import "./surveyform.css";
 
-const _logger = debug.extend("TextArea");
-
 function TextArea({ questions }) {
-  _logger(questions);
-
   const { handleChange } = useFormikContext();
 
   const helpMessage = (
