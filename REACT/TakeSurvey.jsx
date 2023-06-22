@@ -7,17 +7,14 @@ import Swal from "sweetalert2";
 import PropTypes from "prop-types";
 import toastr from "toastr";
 import surveyService from "../../services/surveyService";
-import debug from "sabio-debug";
 import Footer from "../Footer";
 import CheckBox from "./CheckBox";
 import TextArea from "./TextArea";
 import Content from "../Content";
 
-const _logger = debug.extend("TakeSurvey");
 
 function TakeSurvey(props) {
   const [initialValues, setIntitialValues] = useState({});
-  _logger(initialValues);
 
   const surveyId = useParams();
   const navigate = useNavigate();
@@ -25,7 +22,6 @@ function TakeSurvey(props) {
     surveyId: surveyId.id,
     userId: props.currentUser.id,
   });
-  _logger(payload);
   const mapQuestions = (element) => {
     if (element.isMultipleAllowed === true) {
       return <CheckBox key={element.id} question={element} />;
@@ -58,11 +54,11 @@ function TakeSurvey(props) {
         navigate("/");
       }
     });
-    _logger(surveyAnswers, data);
+    console.log(surveyAnswers, data);
   };
 
   const onGetSurveyByIdSuccess = (response) => {
-    _logger(response.items);
+    console.log(response.items);
     const survey = response.items;
 
     surveyService
@@ -80,12 +76,12 @@ function TakeSurvey(props) {
   };
 
   const onGetSurveyByIdError = (err) => {
-    _logger(err);
+    console.log(err);
     toastr.error("Survey Not Found");
   };
 
   const onSurveyInstanceSuccess = (response) => {
-    _logger(response);
+    console.log(response);
     setPayload((prevState) => {
       const payload = { ...prevState };
       payload.instanceId = response.item;
@@ -94,15 +90,15 @@ function TakeSurvey(props) {
   };
 
   const onSurveyInstanceError = (err) => {
-    _logger(err);
+    console.log(err);
   };
 
   const onSubmitAnswersSuccess = (response) => {
-    _logger(response);
+    console.log(response);
   };
 
   const onSubmitAnswersError = (err) => {
-    _logger(err);
+    console.log(err);
   };
 
   useEffect(() => {
