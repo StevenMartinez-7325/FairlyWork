@@ -5,13 +5,13 @@ CREATE proc [dbo].[SiteReferences_SelectByDates]
 as
 
 /*
-
-Declare @Date1 date = '2023-04-10'
-		,@Date2 date = '2023-04-14'
-
-Execute [dbo].[SiteReferences_SelectByDates]
-						@Date1
-						,@Date2 	
+	
+	Declare @Date1 date = '2023-04-10'
+				,@Date2 date = '2023-04-14'
+	
+	Execute [dbo].[SiteReferences_SelectByDates]
+					@Date1
+					,@Date2 	
 								
 */
 
